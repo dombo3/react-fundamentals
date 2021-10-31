@@ -17,3 +17,28 @@
 <!-- 🐨 Append the div to the root div using `append` -->
 <!--   💰 document.getElementById('root') -->
 <!--   📜 https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append -->
+
+<html>
+  <head>
+    <!-- <script defer src="script.js"></script> Executed as soon as script downloaded without blocking browser parsing html-->
+    <!-- <script async src="script.js"></script> Execute only after the entire document has been loaded -->
+    <script type="module">
+      // deferred automatically !!!
+      // need to test through a server as if you try to load HTML locally you will run into CORS error due to JS module security requirements
+      // strict mode automatically
+      // only executed once (even if referenced multiple times)
+      // features are not available globally (you import feature in module, you will not access it in the console for example)
+      const root = document.createElement('div')
+      const container = document.createElement('div')
+
+      root.id = 'root'
+
+      container.textContent = 'Hello World'
+      container.className = 'container'
+
+      root.appendChild(container)
+      document.body.append(root)
+    </script>
+  </head>
+  <body></body>
+</html>
